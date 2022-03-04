@@ -26,7 +26,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    searchMovies("superman");
+    searchMovies("Hollywood");
   }, []);
 
   return (
@@ -54,7 +54,7 @@ const App = () => {
       <div className='container'>
         {movies?.length > 0 ? (
           movies.map((movie) => {
-            return <MovieCard movie={movie} />;
+            return <MovieCard key={movie.imdbID} movie={movie} />;
           })
         ) : (
           <div>No Movies Found</div>
